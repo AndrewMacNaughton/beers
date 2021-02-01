@@ -1,0 +1,25 @@
+{
+  "name": "beer-server",
+  "version": "0.0.0",
+  "description": "Beers!",
+  "main": "beers.js",
+  "scripts": {
+    "test": "mocha",
+    "dev": "nodemon beers.js"
+  },
+  "author": "Andrew MacNaughton",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "memory-cache": "^0.2.0",
+    "nosql": "^6.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.7",
+    "sinon": "^9.2.4"
+  }
+}
