@@ -18,7 +18,13 @@
         <p class="review pointer" @click.stop="showRating = !showRating">
           Add your own review!
         </p>
-        <AddRating @added="showRating = false" v-if="showRating" />
+        <transition name="fade">
+          <AddRating
+            @cancel="showRating = false"
+            @added="showRating = false"
+            v-if="showRating"
+          />
+        </transition>
       </div>
     </div>
 
@@ -36,7 +42,7 @@
         <div class="container">
           <div class="row pairing push-down-20">
             <div
-              class="col-6"
+              class="col-12 col-sm-6"
               v-for="(item, index) in foodPairing"
               :key="index"
             >
@@ -108,7 +114,7 @@ export default {
 }
 .food-pairings {
   margin-top: 40px;
-  background-color: #efa8b8;
+  background-color: #62bbc1;
   color: #f8ebeb;
   padding: 20px 0px;
   border-radius: 4px;
@@ -124,5 +130,11 @@ export default {
 }
 .push-down-20 {
   margin-top: 20px;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>

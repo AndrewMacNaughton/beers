@@ -1,12 +1,16 @@
 <template>
   <div class="add-rating">
-    <h3>Add Rating</h3>
-    Select a rating from 1 - 5
-    <Rating
-      @newRating="handleNewRating"
-      :editMode="true"
-      class="push-down-10"
-    />
+    <div class="wrapper">
+      <div>Add Rating <span class="right material-icons pointer" @click="$emit('cancel')">close</span></div>
+    </div>
+    <div class='push-down-20'>
+      Select a rating from 1 - 5
+      <Rating
+        @newRating="handleNewRating"
+        :editMode="true"
+        class="push-down-10"
+      />
+    </div>
     <p>Add your comments about the beer</p>
     <textarea type="text" v-model="comments" />
     <br />
@@ -47,10 +51,18 @@ export default {
 .add-rating {
   margin-top: 20px;
 }
-h3 {
+.right {
+  position: absolute;
+  right: 2%;
+}
+.wrapper {
   background-color: #efa8b8;
   padding: 8px;
   color: #f8ebeb;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 textarea {
   padding: 20px;
@@ -68,6 +80,9 @@ textarea {
 }
 .push-down-10 {
   margin-top: 10px;
+}
+.push-down-20 {
+  margin-top: 20px;
 }
 button {
   background-color: #e26d5a;

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <!-- Would make this more dynamic sizing based on viewport size using mixins -->
-        <div class="col-10">
+        <div class="col-12">
           <input
             v-model="searchTerm"
             class="input"
@@ -11,8 +11,6 @@
             type="text"
             @keydown.enter="search"
           />
-        </div>
-        <div class="col-2 d-flex center">
           <button @click="search" class="pointer">Go</button>
         </div>
       </div>
@@ -52,7 +50,7 @@ export default {
 }
 .search {
   .input {
-    width: 100%;
+    width: 70%;
     max-width: 600px;
     line-height: 4rem;
     font-size: 24px;
